@@ -88,18 +88,15 @@ class Solution {
 
 	public int[] cyclicRotation(int[] A, int k) {
 		// write your code in Java SE 8
-		k = k % A.length;
-		int tmp;
-		int[]
-				end = Arrays.copyOfRange(A, 0, k),
-				start = Arrays.copyOfRange(A, k+1, A.length)
-		;
-		for (int i = 0; i < A.length; i++){
-			tmp = A[i];
-			A[i] = A[(i+k)%A.length];
-		}
+		if (A.length == 0) return A;
+		k %= A.length;
+		if (k < 0) k = A.length + k;
 
-		return null;
+		if (k == 0) return A;
+		int[] tmp = new int[A.length];
+		System.arraycopy(A, 0,tmp, k, A.length - k); //src srcPos, dest, destPos, length
+		System.arraycopy(A,A.length - k, tmp, 0, k);
+		return tmp;
 	}
 
 	public int disjoint(int[] A, int[] B) {

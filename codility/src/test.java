@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class test {
 	public test(){}
 
@@ -5,9 +7,13 @@ public class test {
 		test t = new test();
 
 		Solution s = new Solution();
-		//int[] a = {0, -2147483648, -2147483648};
+		int[] a = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+		int rotate = -64;
 		//System.out.println(s.equilibrium(arr));
 		//System.out.println(s.binaryGap(51712));
+		System.out.println(Arrays.toString(a));
+		System.out.println("rot " + rotate);
+		System.out.println(Arrays.toString(s.cyclicRotation(a,rotate)));
 
 
 //		int[]
