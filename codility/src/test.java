@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class test {
 	public test(){}
@@ -7,14 +7,38 @@ public class test {
 		test t = new test();
 
 		Solution s = new Solution();
-		int[] a = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-		int rotate = -64;
-		//System.out.println(s.equilibrium(arr));
-		//System.out.println(s.binaryGap(51712));
-		System.out.println(Arrays.toString(a));
-		System.out.println("rot " + rotate);
-		System.out.println(Arrays.toString(s.cyclicRotation(a,rotate)));
+//		int[] a = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+//		int rotate = -64;
+//		//System.out.println(s.equilibrium(arr));
+//		//System.out.println(s.binaryGap(51712));
+//		System.out.println(Arrays.toString(a));
+//		System.out.println("rot " + rotate);
+//		System.out.println(Arrays.toString(s.cyclicRotation(a,rotate)));
+		Scanner in = new Scanner(System.in);
+//		String S = in.next();
+//		try {
+//			System.out.format("%d", Integer.parseInt(S));
+//		}catch (NumberFormatException e){
+//			System.out.println("Bad String");
+//		}
+		Calculator c = new Calculator();
+		int T=in.nextInt();
+		while(T-->0)
+		{
+			int n = in.nextInt();
+			int p = in.nextInt();
+			Calculator myCalculator = new Calculator();
+			try
+			{
+				int ans=myCalculator.power(n,p);
+				System.out.println(ans);
 
+			}
+			catch(Exception e)
+			{
+				System.out.println(e.getMessage());
+			}
+		}
 
 //		int[]
 //				a = {-1000000000, -1000000000, 1000000000, 5, -5, -1000000000},
@@ -25,8 +49,8 @@ public class test {
 ////				b = {5, 15, 44, 72, 36, 2, 69, 24};
 //		System.out.println(s.disjoint(a,b));
 
-		example1();
-		example2();
+//		example1();
+//		example2();
 	}
 
 	public static void example1() {
