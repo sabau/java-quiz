@@ -134,7 +134,8 @@ class Solution {
 
 	private static class Node {
 		private int value;
-		private Node next;
+		private Node next, left, right;
+
 	}
 
 	public Solution() {
@@ -208,5 +209,13 @@ class Solution {
 		if (transactionHeads.isEmpty()) return false;
 		transactionHeads.pop();
 		return true;
+	}
+
+
+	//BST height
+	public static int getHeight(Node root){
+		//Write your code here
+		if (root == null || (root.left == null && root.right == null)) return 0;
+		return 1 + Math.max(getHeight(root.left), getHeight(root.right));
 	}
 }
