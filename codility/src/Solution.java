@@ -123,10 +123,22 @@ class Solution {
 		return disjointSetsCounter;
 	}
 
+	public static boolean isPrime(int i) {
+		if (i <= 1) return false;
+		if (i <= 3) return true;
+		if (i % 2 == 0) return false;
+		for (int j = (int) Math.round(Math.sqrt(i)); j > 1; j--){
+			if (i % j == 0) return false;
+		}
+		return true;
+	}
 
-
-
-
-
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		int T = in.nextInt();
+		for ( int i = 0; i < T; i++) {
+			System.out.println(isPrime(in.nextInt()) ? "Prime" : "Non prime");
+		}
+	}
 
 }

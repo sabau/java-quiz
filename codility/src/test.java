@@ -54,20 +54,20 @@ public class test {
 	}
 
 	public static void example1() {
-		Solution sol = new Solution();
+		Stack sol = new Stack();
 		sol.push(5);
 		sol.push(2);                    // stack: [5,2]
 		assert sol.top() == 2;
 		sol.pop();                      // stack: [5]
 		assert sol.top() == 5;
 
-		Solution sol2 = new Solution();
+		Stack sol2 = new Stack();
 		assert sol2.top() == 0;         // top of an empty stack is 0
 		sol2.pop();                     // pop should do nothing
 	}
 
 	public static void example2() {
-		Solution sol = new Solution();
+		Stack sol = new Stack();
 		sol.push(4);
 		sol.begin();                    // start transaction 1
 		sol.push(7);                    // stack: [4,7]
