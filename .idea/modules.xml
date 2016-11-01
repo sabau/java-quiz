@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/codility/codility.iml" filepath="$PROJECT_DIR$/codility/codility.iml" />
+      <module fileurl="file://$PROJECT_DIR$/codility/hackerrank.iml" filepath="$PROJECT_DIR$/codility/hackerrank.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-quiz.iml" filepath="$PROJECT_DIR$/java-quiz.iml" />
     </modules>
   </component>
