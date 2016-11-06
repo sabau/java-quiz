@@ -1,0 +1,3 @@
+# java-quiz
+Some tests from hackerrack, codility ...
+List of little code challenges
