@@ -10,5 +10,31 @@ public class Solutions{
 
       return -1;
   }
+  
+  // Definition for singly-linked list:
+  // class ListNode<T> {
+  //   ListNode(T x) {
+  //     value = x;
+  //   }
+  //   T value;
+  //   ListNode<T> next;
+  // }
+  //
+  ListNode<Integer> removeKFromList(ListNode<Integer> l, int k) {
+      while(l != null && l.value == k){
+          l = l.next;
+      }
+
+      ListNode<Integer> n = l;
+
+      while(n != null){
+          while(n.next != null && n.next.value == k){
+              n.next = n.next.next;
+          }
+          n = n.next;
+      }
+      return l;
+
+  }
 
 }
