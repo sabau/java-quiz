@@ -36,5 +36,63 @@ public class Solutions{
       return l;
 
   }
+  
+  boolean isListPalindrome(ListNode<Integer> l) {
+    ListNode<Integer> h = l, 
+        reverse_end,
+        slow = l, 
+        fast = l, 
+        prev_slow = l; 
+        
+        
+        //middle = null;
+    
+    if(l != null && l.next != null){
+        //go to the middle with slow, fast will have twice his speed
+        while (fast != null && fast.next != null){
+            fast = fast.next.next;
+            prev_slow = slow;
+            slow = slow.next;
+        } //O(N/2) ~ O(N)
+        
+        //fast is null if #elements in l is even, not null if odd
+        //let's store the middle element
+        if (fast != null){
+            //middle = slow;
+            slow = slow.next;
+        }
+        
+        reverse_end = slow;
+        prev_slow.next = null; //close first half
+          
+        //Reverse the second half
+        ListNode<Integer> 
+            prev = null, 
+            cur = reverse_end, 
+            next;
+        while (cur != null){
+            next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
+        }
+        reverse_end = prev;
+        
+        //Compare them
+        ListNode<Integer> t1 = l, t2 = reverse_end;
+        while (t1 != null && t2 != null){
+            if (t1.value.equals(t2.value)) {
+                t1 = t1.next;
+                t2 = t2.next;
+            }else{
+                return false;
+            }
+        }
+        //we should restore the oroginal list..naaah        
+        if (t1 == null && t2 == null)
+            return true;
+        return false;
+    }
+  
 
 }
