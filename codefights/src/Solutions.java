@@ -93,6 +93,36 @@ public class Solutions{
             return true;
         return false;
     }
+    
+    
+    ListNode<Integer> mergeTwoLinkedLists(ListNode<Integer> l1, ListNode<Integer> l2) {
+    if (l1 == null) return l2;
+    if (l2 == null) return l1;
+    ListNode<Integer> i1 = l1, i2 = l2, mi = null, m = null;
+    if (i1.value <= i2.value){
+        m = i1;
+        i1 = i1.next;
+    }else{
+        m = i2;
+        i2 = i2.next;
+    }
+    mi = m;
+    
+    while (i1 != null && i2 != null){
+        if (i1.value <= i2.value){
+            mi.next = i1;
+            i1 = i1.next;
+        }else{
+            mi.next = i2;
+            i2 = i2.next;
+        }
+        mi = mi.next;
+    }
+    if (i1 != null) mi.next = i1;
+    if (i2 != null) mi.next = i2;
+    
+    return m;
+}
   
 
 }
