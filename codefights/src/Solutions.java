@@ -123,6 +123,44 @@ public class Solutions{
     
     return m;
 }
+    
+    
+    ListNode<Integer> reverseNodesInKGroups(ListNode<Integer> head, int k) {
+    if (head == null || k < 2) return head;
+    ListNode dummy = new ListNode(0);
+    dummy.next = head;
+    ListNode pre = dummy;
+    ListNode cur = head;
+    while(cur != null) {
+        ListNode pilot = pre.next;
+        int remaining = k;
+        while (pilot != null && remaining > 0) {
+            remaining--;
+            pilot = pilot.next;
+        }
+        if (remaining > 0) {
+            break;
+        }
+        while(cur.next != pilot) {
+            ListNode nt = cur.next.next;
+            cur.next.next = pre.next;
+            pre.next = cur.next;
+            cur.next = nt;
+        }
+        pre = cur;
+        cur = cur.next;
+    }
+    return dummy.next;
+}
+
+void debug(ListNode<Integer> l){
+    ListNode<Integer> tmp = l;
+    System.out.println("\nNew List");
+    while (tmp != null){
+        System.out.format("->%d", tmp.value);
+        tmp = tmp.next;
+    }
+}
   
 
 }
