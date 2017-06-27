@@ -152,6 +152,30 @@ public class Solutions{
     }
     return dummy.next;
 }
+    ListNode<Integer> rearrangeLastN(ListNode<Integer> l, int n) {
+    if (n == 0 || l == null || l.next == null) return l;
+    ListNode cur = l, head = null, tmp;
+    int count = 0;
+    while (cur != null){
+        cur = cur.next;
+        count += 1;
+    }
+    if (n == count) return l;
+    tmp = l;
+    cur = l;
+    while (count > n){
+        tmp = cur;
+        cur = cur.next;
+        count -= 1;
+    }
+    head = cur;
+    tmp.next = null;
+    while (cur.next != null){
+        cur = cur.next;
+    }
+    cur.next = l;
+    return head;
+}
 
 void debug(ListNode<Integer> l){
     ListNode<Integer> tmp = l;
